@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-# port-scanner
-A simple Python port scanner for security analysis.
-=======
-<<<<<<< HEAD
-# port-scanner
-A simple Python port scanner for security analysis.
-=======
 Port Scanner
 
 Description
@@ -58,9 +50,7 @@ Save scan results to a file.
 
 Enhance error handling.
 
-Contributions
+ons
 
 Feel free to fork, submit pull requests, or suggest improvements to make this tool even better!
 
->>>>>>> 9fad8d0 (Added README file)
->>>>>>> d9d524c (Initial commit - Added port scanner and README)
