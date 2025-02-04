@@ -1,3 +1,4 @@
+cat <<EOF > README.md
 # **Port Scanner**
 
 ## 📌 **Description**
@@ -20,15 +21,15 @@ This project is a **simple Python Port Scanner** that scans a given IP address f
 
 ### 1️⃣ **Run the script**
 
-```sh
+\`\`\`sh
 python port_scanner.py
-```
+\`\`\`
 
-### 2️⃣ **Provide user inputs:**
+### 2️⃣ **Provide user inputs:**  
 
-- **Enter the target IP address**
-- **Enter the start port**
-- **Enter the end port**
+- **Enter the target IP address**  
+- **Enter the start port**  
+- **Enter the end port**  
 
 The script will scan the specified port range and **display open ports with their corresponding services**.
 
@@ -36,7 +37,7 @@ The script will scan the specified port range and **display open ports with thei
 
 ## 📂 **Example Output**
 
-```
+\`\`\`
 Give the IP address of the target:
 127.0.0.1
 What is the Start Port:
@@ -46,30 +47,38 @@ What is the End Port:
 Scanning 127.0.0.1 from port 50 to 10000...
 [+] Port 80 is open (http)
 Scan complete!
-```
+\`\`\`
 
 ---
 
 ## 🔥 **New Improvements in This Version**
 
-✅ **Enhanced Error Handling**
+✅ **Enhanced Error Handling**  
 
 - **Invalid IP Address Handling:** Prevents scanning if the IP/hostname is incorrect  
-- **Port Range Validation:** Ensures user inputs are between `0 - 65535`  
+- **Port Range Validation:** Ensures user inputs are between \`0 - 65535\`  
 - **Timeout Handling:** Avoids long wait times on unresponsive ports  
 - **Unexpected Errors:** Catches exceptions and prevents script crashes  
 
-✅ **Fixed Typo in Input Prompt**
+✅ **Fixed Typo in Input Prompt**  
 
-- `"What is the End Prot :"` → `"What is the End Port :"`  
+- \`"What is the End Prot :"\` → \`"What is the End Port :"\`  
+
+---
+
+## 🔥 **Recent Update**  
+
+✅ **Multithreading for Faster Scanning**  
+
+The script now performs **concurrent scanning** using multithreading to scan multiple ports simultaneously, significantly improving performance and reducing scan times.
 
 ---
 
 ## 🎯 **Future Improvements**
 
-🔹 **Add multi-threading** for faster scanning  
-🔹 **Save scan results** to a file for later analysis  
-🔹 **Improve user interface** with a progress bar  
+🔹 **Save scan results** to a file for later analysis.  
+🔹 **Improve user interface** with a progress bar.  
+🔹 **Add custom error handling for different network conditions.**
 
 ---
 
@@ -79,4 +88,4 @@ Feel free to **fork**, **submit pull requests**, or **suggest improvements** to 
 
 📅 **Last Updated:** 2025-02-03  
 👨‍💻 **Author:** Omar  
-
+EOF

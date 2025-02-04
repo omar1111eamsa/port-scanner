@@ -1,4 +1,5 @@
 import socket  # Importing the socket module for network communication
+import threading  # Importing the threading module for parallel execution
 
 
 def scan_port(target, port):
@@ -26,6 +27,23 @@ def scan_port(target, port):
         print(f"[!] An unexpected error occurred: {e}")
 
 
+def scan_ports_in_range(target, start_port, end_port):
+    """
+    Function to scan a range of ports using multiple threads.
+    """
+    threads = []  # List to hold threads
+
+    # Create a thread for each port to be scanned
+    for port in range(start_port, end_port + 1):
+        thread = threading.Thread(target=scan_port, args=(target, port))
+        threads.append(thread)
+        thread.start()  # Start the thread
+
+    # Wait for all threads to complete
+    for thread in threads:
+        thread.join()
+
+
 def main():
     """
     Main function to get user input and scan a range of ports on a given target.
@@ -46,9 +64,8 @@ def main():
 
         print(f"Scanning {target} from port {start_port} to {end_port}...")
 
-        # Loop through each port in the specified range and scan it
-        for port in range(start_port, end_port + 1):
-            scan_port(target, port)
+        # Call the function to scan ports using multithreading
+        scan_ports_in_range(target, start_port, end_port)
 
         print("Scan complete!")  # Print message when scanning is finished
 
